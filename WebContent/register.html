@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<link href="css/register.css" rel="stylesheet"/>
+<script src="js/jquery-3.5.1.js"></script>
+<script src="js/register.js"></script>
+
+<title>注册页</title>
+
+
+</head>
+<body>
+	<div class="box">
+		<form action="LoginController" method="post" id="form" >
+		<h1>register</h1>
+		<input type="text" placeholder="Username" name="username" id="username"/> 
+		<span type="text" id="checkError1" style="color: red;" ></span>
+		<input type="text" placeholder="Name" name="name" id="name"/>
+		<span type="text" id="checkError2" style="color: red;" ></span>
+		<input type="text" placeholder="Email" name="email" id="email"/> 
+		<span type="text" id="checkError3" style="color: red;" ></span>
+		<select name="provinceCode" id="province" >
+			<option value="">请选择省份</option>
+		</select>
+		<span class="auth_arr" id="provinceError"></span>
+		<select name="cityCode" id="city" >
+			<option value="">请选择城市</option>
+		</select>
+		<span class="auth_arr" id="cityError"></span>
+		<input type="password" placeholder="Password"  name="password" id="password"/>
+		<span type="text" id="checkError4" style="color: red;"></span>
+		<input type="password" placeholder="Confirm Password"  name="repassword" id="repassword"/>
+		<span type="text" id="checkError5" style="color: red;" ></span>
+		<div><a href="login.html" charset="utf-8" style="Font-size:10px; text-decoration:none;" class="link_1">已有账号，请登录</a>
+		<br>
+		</div>
+	    
+        <input type="button" class="submit" value="Submit" id="button" onclick="ajaxRegister()">
+		</form>
+		<span type="text" id="checkError" style="color: red;" ></span>	
+		</div>
+			
+</body>
+</html>
