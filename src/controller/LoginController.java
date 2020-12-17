@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLEncoder;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,7 +49,10 @@ public class LoginController extends HttpServlet {
 		
 		session.setAttribute("username", username);
 		session.setAttribute("password", password);
-		User user=userDao.finduserByusername(username);
+		User user;
+		try {
+			user = userDao.get(username);
+		
 	    int result=userService.login(username,password);
 	    session.setAttribute("result", result);//存放result
 	    System.out.println(vCode);
@@ -83,7 +87,7 @@ public class LoginController extends HttpServlet {
 			}
 			else {
 				System.out.println("登录成功！");
-				request.setAttribute("username", user.getUsername());
+				request.setAttribute("username", user.getUserName());
 				request.setAttribute("result", "ture");
 				if (autologin!=null) {
 					//中文编码
@@ -112,6 +116,13 @@ public class LoginController extends HttpServlet {
 		out.print(jsonStr);
 		out.flush();
 		out.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

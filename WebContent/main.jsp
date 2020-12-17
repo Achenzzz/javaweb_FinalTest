@@ -60,7 +60,7 @@ li a:hover:not(.active) {
 	<ul>
 		<li><a class="active" href="#home">主页</a></li>
 		<li><a href="GetDownloadListController">资源下载</a></li>
-		<li><a href="userManager.jsp">用户管理</a></li>
+		<li><a href="userManager.html">用户管理</a></li>
 		<li><a href="resourceManager.jsp">资源管理</a></li>
 		<li><a href="user.jsp">个人中心</a></li>
 		<li><a href="aboutUs.jsp">关于我们</a></li>

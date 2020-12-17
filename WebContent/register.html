@@ -7,7 +7,58 @@
 <link href="css/register.css" rel="stylesheet"/>
 <script src="js/jquery-3.5.1.js"></script>
 <script src="js/register.js"></script>
-
+<style type="text/css">
+	
+	.img_username{
+		position:absolute;
+		height:28px;
+		width:28px;
+		left:60px;
+		top:105px;
+	}
+	.img_name{
+		position:absolute;
+		height:32px;
+		width:32px;
+		left:58px;
+		top:168px;
+	}
+	.img_email{
+		position:absolute;
+		height:28px;
+		width:28px;
+		left:65px;
+		top:240px;
+	}
+	.img_province{
+		position:absolute;
+		height:28px;
+		width:28px;
+		left:75px;
+		top:308px;
+	}
+	.img_city{
+		position:absolute;
+		height:31px;
+		width:31px;
+		left:72px;
+		top:377px;
+	}
+	.img_password{
+	position:absolute;
+		height:38px;
+		width:38px;
+		left:55px;
+		top:440px;
+	}
+	.img_password1{
+	position:absolute;
+		height:38px;
+		width:38px;
+		left:54px;
+		top:509px;
+	}
+</style>
 <title>注册页</title>
 
 
@@ -15,24 +66,51 @@
 <body>
 	<div class="box">
 		<form action="LoginController" method="post" id="form" >
+		<input id="action" name="action" value="" hidden />
 		<h1>register</h1>
+		<div class="box1">
 		<input type="text" placeholder="Username" name="username" id="username"/> 
+		<img class="img_username" src="img/login.png">
+		</div>
 		<span type="text" id="checkError1" style="color: red;" ></span>
+		<div class="box1">
 		<input type="text" placeholder="Name" name="name" id="name"/>
+				<img class="img_name" src="img/name.png">
+		
+		</div>
 		<span type="text" id="checkError2" style="color: red;" ></span>
+		<div class="box1">
 		<input type="text" placeholder="Email" name="email" id="email"/> 
+				<img class="img_email" src="img/email.png">
+		
+		</div>
 		<span type="text" id="checkError3" style="color: red;" ></span>
+		<div class="box1">
 		<select name="provinceCode" id="province" >
 			<option value="">请选择省份</option>
 		</select>
+		<img class="img_province" src="img/province.png">
+		</div>
 		<span class="auth_arr" id="provinceError"></span>
+		<div class="box1">
 		<select name="cityCode" id="city" >
 			<option value="">请选择城市</option>
 		</select>
+		<img class="img_city" src="img/city.png">
+		</div>
 		<span class="auth_arr" id="cityError"></span>
+		<div class="box1">
 		<input type="password" placeholder="Password"  name="password" id="password"/>
+		<img class="img_password" src="img/password.png">
+		</div>
+		
 		<span type="text" id="checkError4" style="color: red;"></span>
+				<div class="box1">
+		
 		<input type="password" placeholder="Confirm Password"  name="repassword" id="repassword"/>
+				<img class="img_password1" src="img/password.png">
+		
+		</div>
 		<span type="text" id="checkError5" style="color: red;" ></span>
 		<div><a href="login.html" charset="utf-8" style="Font-size:10px; text-decoration:none;" class="link_1">已有账号，请登录</a>
 		<br>

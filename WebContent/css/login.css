@@ -33,16 +33,16 @@ body {
 	padding: 14px 10px;
 	width: 200px;
 	outline: none;
-	color: white;
+	color: black;
 	border-radius: 24px;
 	transition: 0.25s;
 }
-
+/* 
 .box input[type='text']:focus, .box input[type='password']:focus,
 			.box input[type='userCode']:focus {
 	width: 280px;
 	border-color: #2ecc71;
-}
+} */
 
 .submit {
 	border: 0;
@@ -72,3 +72,55 @@ img {
 	cursor: pointer;
 }
 input,img{vertical-align:middle;}
+
+.box1   {
+         /*    width: 200px; */
+            position: relative;
+        }
+.box1 .icon_login{
+	        background: url(img/login.png) no-repeat;
+            width: 2px;
+            height: 2px;
+            position: absolute;
+            top: 6px;
+            left: 0;
+}
+/* .username{
+	background-image: url(img/login.png);
+	设置小图标
+	
+	background-size: 25px 25px;
+	小图标的大小
+	
+	background-position: 10px 8px;
+	小图标在input的位置
+	
+	background-repeat: no-repeat;
+	背景小图标不重复
+}
+.password{
+	background-image: url(img/password.png);
+	设置小图标
+	
+	background-size: 25px 25px;
+	小图标的大小
+	
+	background-position: 10px 8px;
+	小图标在input的位置
+	
+	background-repeat: no-repeat;
+	背景小图标不重复
+}
+.usercode{
+	background-image: url(img/usercode.png);
+	设置小图标
+	
+	background-size: 25px 25px;
+	小图标的大小
+	
+	background-position: 10px 8px;
+	小图标在input的位置
+	
+	background-repeat: no-repeat;
+	背景小图标不重复
+} */

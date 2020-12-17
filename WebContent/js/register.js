@@ -26,12 +26,6 @@ $(document).ready(function()
 	{
 		$("#city").empty();
 		$("#city").append($("<option>").val("").text("请选择城市"));
-		/*if($("#city").val()=="")
-		{
-			$("#provinceError").css("color","#c00202");
-			$("#provinceError").text("必须先选择省份");
-			
-		}*/
 		province_correct=true;
 		console.log($("#province").val());
 		$("#provinceError").text("");

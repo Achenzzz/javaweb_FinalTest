@@ -38,27 +38,22 @@ public class PermissionResourceFilter implements Filter {
 		if (notCheckPath.indexOf(path) == -1) {
 			System.out.println("notCheckPath" + notCheckPath);
 			HttpSession session = request.getSession();
+			if(session.getAttribute("result")!="null") {
 			if ((Integer) session.getAttribute("result") == 1 || (Integer) session.getAttribute("result") == 0) {// 没有登录
 				request.setAttribute("result", "没有权限访问!");
 				request.getRequestDispatcher("error.jsp").forward(request, resp);
 			} else {// 登录成功后进行权限判断
 				PermissionDao permissionDao = new PermissionDao();
 				String username = (String) session.getAttribute("username");
-			
-
 				ArrayList<T_resource> resources = permissionDao.findResourceByUserName(username);
 				for (T_resource t_resource : resources) {
-
 					String[] strings = t_resource.getUrl().split(",");
 					boolean res = false;
 					System.out.println(t_resource.getResourceName());
-
 					for (int i = 0; i < strings.length; i++) {
 						String string = strings[i];
 						System.out.println(string);
-
 					}
-
 					System.out.println(path.substring(1));
 					if (t_resource.getUrl().indexOf(path.substring(1)) != -1) {
 						int a=t_resource.getUrl().indexOf(path.substring(1));
@@ -73,6 +68,10 @@ public class PermissionResourceFilter implements Filter {
 					}
 				}
 
+			}
+			}else {
+				request.setAttribute("result", "请先登录！");
+				request.getRequestDispatcher("error1.jsp").forward(request, resp);
 			}
 			chain.doFilter(req, resp);
 		} else {

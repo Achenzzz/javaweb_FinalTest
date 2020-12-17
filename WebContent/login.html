@@ -9,7 +9,15 @@
 <script src="js/login.js"></script>
 
 <title>登录页</title>
-
+<style>
+.img_username{
+position:absolute;
+left:20px;
+top:-20px; 
+height:28px;
+width:28px;
+}
+</style>
 <script type="text/javascript">
 function changeCode(){
 	 
@@ -25,11 +33,21 @@ function changeCode(){
 	<div class="box">
 		<form action="LoginController" method="post" id="form" >
 		<h1>Login</h1>
-		<input type="text" placeholder="Username" name="username" id="username"/> 
+		<div class="box1">
+		<input type="text" placeholder="Username" name="username" id="username" class="username"/> 
+		<img src = "img/login.png" class = "img_username">
+		</div>
 		<span type="text" id="checkError1" style="color: red;" ></span>
-		<input type="password" placeholder="Password"  name="password" id="password"/>
+		<div class="box1">
+		<input type="password" placeholder="Password"  name="password" id="password" class="password"/>
+		<img src = "img/password.png" class = "img_username">
+		</div>
 		<span type="text" id="checkError2" style="color: red;"></span>
-		<input type="text" placeholder="Verifycode" name="userCode" id="usercode"/>
+		<div class = "box1">
+		<input type="text" placeholder="Verifycode" name="userCode" id="usercode" class="usercode"/>
+		<img src = "img/usercode.png"/ class = "img_username">
+		</div>
+		
 		<span type="text" id="checkError3" style="color: red;"></span>
 		<div><input type="checkbox" name="autologin" value="ture"><span style="color:white">一周内免登录&nbsp&nbsp</span><a href="register.html" charset="utf-8" style="color:blue;Font-size:10px; text-decoration:none;">免费注册</a>
 		<br>

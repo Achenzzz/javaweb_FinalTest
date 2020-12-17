@@ -1,5 +1,6 @@
 package service;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import Dao.UserDao;
@@ -7,8 +8,8 @@ import model.User;
 
 public class UserService {
 	UserDao userDao=new UserDao();
-    public int login(String username,String password){
-        User user=userDao.finduserByusername(username);
+    public int login(String username,String password) throws ClassNotFoundException, SQLException{
+        User user=userDao.get(username);
         //System.out.println(user.getUsername());
         if(null==user) {
             return 0;//用户名不正确
@@ -18,6 +19,6 @@ public class UserService {
             return 2;//都正确
         }
         }
-    public List<User> findAll(){return userDao.findAll();}
+//    public List<User> findAll(){return userDao.findAll();}
 
 }
